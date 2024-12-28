@@ -10,8 +10,8 @@
 :root{
   --header-height:3.5rem;
   --first-color:hsl(232, 35%, 63%);
-  --title-color:hsl(231, 71, 17);
-  --text-color:hsl(231, 17, 46);
+  --title-color:hsl(230, 71%, 14%);
+  --text-color:hsl(0, 0%, 0%);
   --border-color:hsl(228, 31%, 75%);
   --white-color:hsl(0, 0, 100);
   --body-color:hsl(230, 81%, 90%);
@@ -396,7 +396,7 @@ img{
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 7rem;
+  column-gap: .75rem;
   margin-bottom: 1.25rem
 }
 
@@ -428,18 +428,12 @@ img{
 
 }
 
-.featured_actions{
-  display: inline-flex; 
-  flex-direction: column;
-  row-gap: .75rem;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  font-size: 2rem;
-  color: var(--title-color);
+.featured_actions button{
+  background: none;
+  font-size: 1.25rem;
+  color: var(--first-color);
   cursor: pointer;
 }
-
 
 
 @media screen and (min-width: 1150px){
