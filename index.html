@@ -11,7 +11,7 @@
 
     <!--Header-->
     <header class="header" id="header">
-        <nav class="navbar">
+        <nav class="nav">
             <a href="#" class="nav_logo">
                 <i class="ri-book-2-line"></i> EpiReads
             </a>
@@ -43,7 +43,14 @@
                     <li class="nav_item">
                         <a href="#new" class="nav_link">
                             <i class="ri-bookmark-2-line"></i>
-                            <span>New Books</span>
+                            <span>New Releases</span>
+                        </a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="#contact" class="nav_link">
+                            <i class="ri-phone-line"></i>
+                            <span>Contact</span>
                         </a>
                     </li>
                 </ul>
@@ -51,10 +58,14 @@
    
             <!--Search Bar-->
             <div class="nav_action">
-                <i class="ri-search-line search-button" id="search-button"></i>
+                <a href="#search-content" class="search-button">
+                    <i class="ri-search-line"></i>
+                </a>
 
                 <!--login button-->
-                <i class="ri-user-3-line login-button" id="login-button"></i>
+                <a href="#login-content" class="login-button">
+                    <i class="ri-user-3-line"></i>
+                </a>
 
                 <!--Theme-->
                 <i class="ri-moon-line change-theme" id="theme-button"></i>
@@ -63,30 +74,33 @@
     </header>
 
     <!--search-->
-    <div class="search-container" id="search-content">
+    <div class=" search search-container" id="search-content">
         <form action="" class="search_form">
             <i class="ri-search-line"></i>
-            <input type="Search"  placeholder="Looking for....?" class="search_input">
+            <input type="search"  placeholder="What are you looking for....?" class="search_input">
         </form>
 
-        <i class="ri-close-line search_close" id="search-close"></i>
+        <!-- Close Button -->
+         <a href="#" class="search_close">
+            <i class="ri-close-line"></i> 
+        </a>
     </div>
 
     <!--login section-->
-    <div class="login grid" id="login-content">
+    <div class="login grid " id="login-content">
         <form action="" class="login_form grid">
             <h3 class="login_title">Login</h3>
 
-            <div class="form_group grid">
-                <diV>
+            <div class="form_group">
+                <div>
                     <label for="login-email" class="login_label">Email</label>
                     <input type="email" placeholder="Enter your email" id="login-email" class="login_input">
-                </diV>
+                </div>
   
-                <diV>
+                <div>
                     <label for="login-pass" class="login_label">Password</label>
                     <input type="password" placeholder="Enter your password" id="login-pass" class="login_input">
-                </diV>
+                </div>
             </div>
 
             <div>
@@ -98,11 +112,14 @@
                     Forgot Password?
                 </a>
 
-                <button type="submit" class="login_button button">Log In</a>
+                <button type="submit" class="login_button button">Log In</button>
             </div>   
         </form>
 
-        <i class="ri-close-line login_close" id="login-close"></i>
+        <a href="#" class="login_close">
+            <i class="ri-close-line"></i>
+        </a>
+
     </div>
 
     <!--Home content-->
@@ -167,7 +184,6 @@
         </section>
 
         <!--Featured-->
-
         <section class="featured section" id="featured">
             <h2 class="section_title">Featured E-books</h2>
 
@@ -540,7 +556,7 @@
     <!--footer-->
     <div class="footer_container container grid">
         <div>
-            <a href="#" class="footer_logo">
+            <a href="#" class="footer_logo" id="contact">
                 <i class="ri-book-2-line">EpiReads</i>
             </a>
 
@@ -640,6 +656,10 @@
     <span class="footer_copy">
         &#169; All Rights Reserved By EpiReads
     </span>
+    
+    <!-- Link to external JavaScript -->
+    <script src="script.js"></script>
+
     
 </body>
 </html>
