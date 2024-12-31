@@ -274,8 +274,8 @@ img{
 
 .login_form{
   background-color: var(--container-color);
-  padding: 2rem 1.5rem;
-  border: 2px solid var(--border-color);
+  padding: 2rem ;
+  border: 1px solid var(--border-color);
   row-gap: 1.24rem;
 }
 
@@ -307,9 +307,8 @@ img{
   font-size: var(--small-font-size);
 }
 
-.login_button{
-  width: 100%;
-  cursor: pointer;
+.login_signup{
+  margin-bottom: .5rem;
 }
 
 .login_signup a{
@@ -317,23 +316,34 @@ img{
   font-weight: var(--font-medium);
 }
 
+.login_forgot{
+  color: var(--first-color);
+  margin-bottom: 1.25rem;
+}
+
 .login_close{
   position: absolute;
-  top: 2rem;
-  right: 2rem;
+  margin-top: 30rem;
+  margin-left: 750px;
   font-size: 2rem;
   color: var(--title-color);
   cursor: pointer;
+  text-decoration: none;
 }
 
-.show_login{
+.login:target {
   top: 0;
+}
+
+.login_button{
+  width: 100%;
+  cursor: pointer;
 }
 
 .button{
   display: inline-block;
   background-color: var(--first-color);
-  color: var(--white-color);
+  color: white;
   font-weight: var(--font-semi-bold);
   padding: 1rem 1.4rem;
   transition: box-shadow .4s;
@@ -342,6 +352,7 @@ img{
 .button:hover{
   box-shadow: 0 4px 32px hsla(231, 70%, 35%, .4);
 }
+
 
 /* Home CSS */
 .home_container {
@@ -856,6 +867,47 @@ img{
     margin-inline: 1rem;
   }
 
+  .nav_menu {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+    position: fixed;
+    left: -90px;
+    bottom: 0; 
+    width: 130%;
+    padding: 0.5rem ; 
+    background-color: var(--container-color);
+  }
+
+  .nav_action {
+    position: fixed;
+    top: 0; 
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; 
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+  }
+
+  .nav_link span {
+    display: none; 
+  }
+
+  .nav_link i {
+    font-size: 1.5rem; 
+    color: var(--text-color); 
+  }
+
+  .nav_list {
+    display: flex;
+    justify-content: space-around; 
+    width: 100%;
+  }
+
+  .nav_item {
+    padding: 0.5rem;
+  }
+
   .home_container {
     flex-direction: column; 
     align-items: center; 
@@ -891,10 +943,9 @@ img{
 
   .home_article {
     width: 100%; 
-    transform: scale(1); /* Make images normal size */
+    transform: scale(1); 
   }
 
-  /* Adjust the button */
   .button {
     font-size: 1rem;
     padding: 0.6rem 1.5rem;
@@ -908,6 +959,26 @@ img{
   .discount_img-1, .discount_img-2{
     width: 125px;
     margin-right: 15px;
+  }
+
+  .discount_container {
+    display: flex;
+    flex-direction: column-reverse; 
+    gap: 1.5rem; 
+  }
+
+  .discount_images {
+    order: 1; 
+  }
+
+  .discount_data {
+    order: 2; 
+    text-align: center; 
+  }
+
+  .discount_images img {
+    width: 40%; 
+    height: auto;
   }
 
   .featured_card{
@@ -931,7 +1002,24 @@ img{
 
   .footer_copy{
     margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 90px;
+  }
+
+  .join_title{
+    font-size: 2rem;
+  }
+
+  .login_close{
+    margin-left: 150px;
+  }
+
+  .search_close {
+    font-size: 20px; /* Adjust the close button icon size */
+    position: absolute;
+    top: 0;
+    margin-top: 200px;
+    right: 120px;
+    padding: 0.5rem;
   }
   
 }
@@ -975,6 +1063,195 @@ img{
 
   .nav_list{
     column-gap: 4rem;
+  }
+
+  .nav_link{
+    font-weight: var(--font-medium);
+  }
+
+  .home_data{
+    width: initial;
+  }
+
+  .services_container{
+    column-gap: 10rem;
+    justify-content: center;
+    display: flex;
+    margin-left: 80px;
+  }
+
+  .services_card i{
+    font-size: 3.5rem;
+  }
+
+  .featured_container{
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto auto;
+    gap: 2rem;
+    padding-left: 10rem;
+  }
+
+  .featured_title{
+    font-size: var(--h3-font-size);
+  }
+
+  .featured_swiper {
+    display: contents; 
+  }
+
+  .swiper-wrapper {
+    display: contents;
+  }
+
+  .featured_card {
+    width: 100%; 
+ 
+  }
+
+  .discount_container{
+    grid-template-columns: 614px 500px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .discount_data{
+    order: 1;
+  }
+
+  .discount_data, .discount_title{
+    text-align: initial;
+  }
+
+  .discount_description{
+    margin-bottom: 3.5rem;
+  }
+
+  .discount_img-1, .discount_img-2{
+    width: 250px;
+  }
+
+  .new_container{
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: auto auto;     
+    gap: 2rem;                          
+    justify-items: center;            
+    align-items: start; 
+
+  }
+
+  .new_card{                             
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;  
+    gap: 3rem;            
+    width: 105%; 
+    margin-left: 5rem;
+  }
+
+  .new_img{
+    width: 105px;
+    height: auto;       
+    object-fit: cover;
+  }
+
+  .new_title{
+    font-size: var(--h3-font-size);
+  }
+
+  .new_content {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: left;       
+}
+
+  .join_bg{
+    object-position: 0 -5rem;
+  }
+
+  .footer{
+    padding-block: 6rem 3rem;
+  }
+
+  .footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .footer_data{
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 4.5rem;
+  }
+
+  .footer_logo, .footer_title{
+    font-size: var(--h2-font-size);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer_links{
+    row-gap: 1rem;
+  }
+
+  .footer_social{
+    column-gap: 1.5rem;
+  }
+
+  .footer_social-link{
+    font-size: 1.5rem;
+  }
+
+  .footer_copy{
+    margin-top: 2.5rem;
+  }
+
+}
+
+@media screen and (min-width: 1024px){
+  .nav_menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--container-color);
+    box-shadow: 0 9px 30px hsla(0, 0, 0, .1);
+    padding: 1.24rem 3.5rem;
+    transition: background-color .4s;
+  } 
+
+  .section{
+    padding-block: 7rem 2rem;
+  }
+
+  .nav{
+    height: calc(var(--header-height)+ 2rem);
+    column-gap: 4rem;
+  }
+
+  .nav_link i{
+    display: none;
+  }
+
+  .nav_link span{
+    display: block;
+  }
+
+  .nav_menu{
+    width: initial;
+    margin-inline:auto 0 ;
+    box-shadow: none;
+  }
+
+  .nav_list{
+    column-gap: 3rem;
+    margin-left: 20rem;
   }
 
   .nav_link{
