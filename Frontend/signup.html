@@ -26,7 +26,15 @@
         <div class="signup-box">
             <h3 class="signup-title">Sign Up</h3>
 
-            <form action="" class="signup-form">
+            <!-- Error Message -->
+            <div id="login-error" style="color: red; display: none;"></div>
+
+            <form id="signup-form" class="signup-form">
+                <div class="input-group">
+                    <label for="signup-first-name">First Name</label>
+                    <input type="text" placeholder="Enter your first name" id="signup-first-name" class="signup-input" required>
+                </div>
+
                 <div class="input-group">
                     <label for="signup-email">Email</label>
                     <input type="email" placeholder="Enter your email" id="signup-email" class="signup-input" required>
@@ -39,11 +47,77 @@
 
                 <div class="signup-footer">
                     <span>Already have an account? <a href="login.html">Login</a></span>
-                    <button type="submit" class="signup-button">Sign Up</button>
+                    <button type="button" id="signup-button" class="signup-button">Sign Up</button>
                 </div>
             </form>
         </div>
     </div>
 
-</body>
-</html>
+    <script>
+        // Signup Functionality
+        document.getElementById('signup-button').addEventListener('click', async () => {
+            const firstName = document.getElementById('signup-first-name').value.trim();
+            const email = document.getElementById('signup-email').value.trim();
+            const password = document.getElementById('signup-pass').value.trim();
+            const error = document.getElementById('login-error');
+    
+            // Clear any previous error messages
+            error.style.display = 'none';
+            error.textContent = '';
+    
+            // Validate inputs
+            if (firstName && email && password) {
+                try {
+                    const response = await fetch('http://localhost:4000/api/user/', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({name: firstName, email, password }),
+                    });
+    
+                    // Check if the response is valid JSON
+                    const data = await response.json();
+                    console.log(response); // Logs the full response object
+                    console.log(data);  // Log the server's response for debugging
+    
+                    if (response.ok) {
+                        alert('Signup successful!');
+                        window.location.href = 'login.html';
+    
+                    } else {
+                        error.textContent = data.message || 'Signup failed. Please try again.';
+                        error.style.display = 'block';
+                    }
+                } catch (err) {
+                    error.textContent = 'An error occurred. Please try again later.';
+                    error.style.display = 'block';
+                    console.error(err);  // Log the error for debugging
+                }
+            } else {
+                error.textContent = 'All fields are required!';
+                error.style.display = 'block';
+            }
+        });
+        
+        // Function to show success popup
+        function showSuccessPopup(message) {
+            // Create popup elements
+            const popup = document.createElement('div');
+            popup.classList.add('popup');
+            popup.innerHTML = `
+            <div class="popup-content">
+                <p>${message}</p>
+                <span class="loader"></span>
+            </div>
+            `;
+            // Append popup to body
+            document.body.appendChild(popup);
+            
+            // Automatically remove popup after 3 seconds
+            setTimeout(() => {
+                popup.remove();
+            }, 3000);
+        }
+    </script>
+    
