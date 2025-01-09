@@ -270,7 +270,7 @@ img{
   align-items: center;
   height: 100%;
   width: 100%;
-  padding-top: 80px;
+  padding-top: 50px;
 }
 
 .signup-box {
@@ -689,26 +689,46 @@ button:hover {
 }
 
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 320px) {
+  .discount {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 1rem 0;
+    border-radius: 10px;
+  }
+
   .discount_container {
     flex-direction: column;
     align-items: center;
+    top: 0;
   }
 
   .discount_left {
     max-width: 100%;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .discount_title {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+  }
+
+  .discount_description {
+    font-size: 0.85rem;
+    text-align: center;
+    line-height: 1.4;
   }
 
   .discount_right {
-    max-width: 100%;
-    margin-top: 2rem;
-    flex-direction: column; 
+    flex-direction: column;
+    gap: 15px;
   }
 
   .img-1, .img-2 {
-    width: 90%; 
+    width: 90%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -1005,6 +1025,16 @@ button:hover {
     margin-inline: 1rem;
   }
 
+  .tagline h1 {
+    font-size: 1.8rem; 
+    margin-top: 100px;
+  }
+
+  .tagline p {
+    font-size: 1.2rem; 
+    margin-top: 20px;
+  }
+
   .nav_menu {
     display: flex;
     flex-direction: column; 
@@ -1152,7 +1182,7 @@ button:hover {
   }
 
   .search_close {
-    font-size: 20px; /* Adjust the close button icon size */
+    font-size: 20px; 
     position: absolute;
     top: 0;
     margin-top: 200px;
@@ -1162,7 +1192,7 @@ button:hover {
   
 }
 
-/*media queries for large devices*/
+/*media queries for desktop*/
 @media screen and (min-width: 1150px){
   .nav_menu{
     position: fixed;
@@ -1246,6 +1276,29 @@ button:hover {
   .featured_card {
     width: 100%; 
  
+  }
+
+  .discount {
+    margin-left: 80px;  
+    margin-right: 80px;
+    padding: 3rem 0;    
+  }
+
+  .discount_title {
+    font-size: 3.5rem;  
+  }
+
+  .discount_description {
+    font-size: 1.4rem;  
+    max-width: 1000px;  
+  }
+
+  .discount_container {
+    top: -30px;         
+  }
+
+  .discount_right {
+    gap: 60px;          
   }
 
   .discount_container{
@@ -1410,6 +1463,8 @@ button:hover {
   .services_card i{
     font-size: 3.5rem;
   }
+
+  
 
   .featured_container{
     padding-top: 2rem;
@@ -1585,4 +1640,43 @@ button:hover {
     --smaller-font-size:.815rem;
   }
 }
+
+/* Popup styling */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  text-align: center;
+}
+
+.popup-content {
+  font-size: 16px;
+  font-weight: bold;
+  color: green;
+}
+
+/* Loader animation */
+.loader {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #4caf50;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin-top: 10px;
+}
+
+@keyframes spin {
+  to {
+      transform: rotate(360deg);
+  }
+}
+
 
